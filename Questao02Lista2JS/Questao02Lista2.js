@@ -2,7 +2,7 @@ const tarefas=document.querySelector('#tarefas');
 const lista=document.querySelector('ul');
 const body=document.querySelector('body');
 tarefas.addEventListener('keyup',(e) => {
-    if(e.key=='Enter'){
+    if(e.key=='Enter' && tarefas.value!=''){
         let btn=document.createElement('button');
         btn.textContent='X' 
         let li=document.createElement('li');    
@@ -12,10 +12,8 @@ tarefas.addEventListener('keyup',(e) => {
         li.textContent=vet;
         li.appendChild(btn);
         tarefas.value='';
-        console.log(e.key);
             btn.addEventListener('click', () =>{
                 lista.removeChild(li);    
-                lista.removeChild(btn); 
             })
     }
     
